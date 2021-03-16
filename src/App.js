@@ -10,7 +10,16 @@ function App() {
   const [alert, setAlert] = useState({show: false, msg:'', type:''});
   const handleSubmit = (e) =>{
     e.preventDefault();
-    console.log('hello')
+   if(!name){
+
+   }
+   else if(name && isEditing){
+
+   } else {
+     const newItem ={id: new Date().getTime().toString(), title:name};
+     setList(...list, newItem);
+     setName('');
+   }
     
   }
 
@@ -26,7 +35,7 @@ function App() {
           </button>
         </div>
       </form>
-      <List/>
+      <List items={list} />
     <button className='clear-btn'>Clear Btn</button>
     </div>
 
