@@ -10,6 +10,7 @@ function App() {
   const [alert, setAlert] = useState({show: false, msg:'', type:''});
   const handleSubmit = (e) =>{
     e.preventDefault();
+    console.log('hello')
     
   }
 
