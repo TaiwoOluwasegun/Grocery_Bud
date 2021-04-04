@@ -17,7 +17,9 @@ function App() {
 
    } else {
      const newItem ={id: new Date().getTime().toString(), title:name};
-     setList(...list, newItem);
+
+     console.log(newItem)
+     setList([...list, newItem]);
      setName('');
    }
     
