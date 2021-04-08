@@ -31,14 +31,21 @@ showAlert(true, 'danger', 'enter a value')   }
   }
 
   const clearList = () =>{
-showAlert(true, 'danger', 'items cleared')
-setList([]);
+    showAlert(true, 'danger', 'items cleared')
+    setList([]);
   }
+
+  
+  const removeItem = (id) =>{
+    showAlert(true, 'danger', 'item removed')
+    setList(list.filter((item) => item.id !== id))
+  }
+
 
   return <section className='section-center'>
     <div className='grocery-container'>
       <form className='grocery-form' onSubmit={handleSubmit}>
-        {alert.show && <Alert {...alert} removeAlert={showAlert}/>}
+        {alert.show && <Alert {...alert} removeAlert={showAlert} list={list}/>}
         <h3>Grocery Bud</h3>
         <div className='form-control'>
           <input ype='text' className='grocery' value={name} placeholder='eggs' onChange={(e)=>{setName(e.target.value)}}></input>
@@ -51,9 +58,8 @@ setList([]);
       {list.length > 0 && (
         <div className='grocery-container'>
   
-            <List items={list} />
+            <List items={list} removeItem ={removeItem} />
           <button onClick = {clearList} className='clear-btn'>Clear Btn</button>
-
           </div>
       )
          
