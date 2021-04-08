@@ -30,6 +30,11 @@ showAlert(true, 'danger', 'enter a value')   }
     setAlert({show,type,msg})
   }
 
+  const clearList = () =>{
+showAlert(true, 'danger', 'items cleared')
+setList([]);
+  }
+
   return <section className='section-center'>
     <div className='grocery-container'>
       <form className='grocery-form' onSubmit={handleSubmit}>
@@ -47,7 +52,7 @@ showAlert(true, 'danger', 'enter a value')   }
         <div className='grocery-container'>
   
             <List items={list} />
-          <button className='clear-btn'>Clear Btn</button>
+          <button onClick = {clearList} className='clear-btn'>Clear Btn</button>
 
           </div>
       )
