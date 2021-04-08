@@ -16,6 +16,7 @@ showAlert(true, 'danger', 'enter a value')   }
    else if(name && isEditing){
 
    } else {
+     showAlert(true, 'success', 'item is added')
      const newItem ={id: new Date().getTime().toString(), title:name};
 
      console.log(newItem)
