@@ -25,7 +25,7 @@ showAlert(true, 'danger', 'enter a value')   }
     setName('')
     setEditId(null)
     setIsEditing(false )
-    setAlert(true, 'sucess', 'value changed')
+    showAlert(true, 'success', 'value changed')
 
    } else {
      showAlert(true, 'success', 'item is added')
